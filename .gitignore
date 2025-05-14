@@ -1,7 +1,12 @@
-*yml
+# Ignoring all .yml files (globally)
+*.yml
+
+# Ignoring specific Caddy-related files
 Caddyfile
 caddy.production.dockerfile
 Caddyfile.production
-./db-data/mongo-db/*
-./db-data/postgres/*
-./db-data/rabbitmq/*
+
+# Ignoring everything inside these folders
+db-data/mongo-db/*
+db-data/postgres/*
+db-data/rabbitmq/*
