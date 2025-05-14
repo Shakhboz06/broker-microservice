@@ -2,3 +2,6 @@
 Caddyfile
 caddy.production.dockerfile
 Caddyfile.production
+./db-data/mongo-db/*
+./db-data/postgres/*
+./db-data/rabbitmq/*
