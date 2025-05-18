@@ -43,7 +43,7 @@ func (pass *Password) SetPassword(text string) error{
 		return err
 	}
 
-	pass.text = &text
+ 	pass.text = &text
 	pass.hash = hash
 
 	return nil
@@ -55,7 +55,6 @@ func (pass *User) PasswordMatches(text string) (bool, error) {
 	if err != nil {
 		switch {
 		case errors.Is(err, bcrypt.ErrMismatchedHashAndPassword):
-			// invalid password
 			return false, nil
 		default:
 			return false, err

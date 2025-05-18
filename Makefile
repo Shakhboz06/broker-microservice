@@ -61,4 +61,3 @@ stop:
 	@echo Stopping front end…
 	taskkill /IM "$(FRONT_END_BINARY)" /F
 
-

@@ -33,6 +33,7 @@ func (app *Config) AuthUser(w http.ResponseWriter, r *http.Request) {
 	
 	ctx := r.Context()
 	user, err := app.Users.GetByEmail(ctx, userPayload.Email)
+
 	
 	if err != nil {
 		app.ErrorResponse(w, errors.New("Invalid credentials"), http.StatusUnauthorized)
@@ -81,9 +82,9 @@ func(app *Config) logRequest(name, data string)error{
 
 	request.Header.Set("Content-Type", "application/json")
 	
-	client := &http.Client{}
+	
 
-	_, err = client.Do(request)
+	_, err = app.Client.Do(request)
 	if err != nil {
 		return err
 	}

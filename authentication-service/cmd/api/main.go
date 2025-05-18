@@ -16,6 +16,8 @@ import (
 type Config struct {
 	DB *sql.DB
 	Users *data.UserStore
+	Repo data.Repository
+	Client *http.Client
 }
 
 func main(){
@@ -30,6 +32,7 @@ func main(){
 	app := &Config{
  		DB: conn,
 		Users: data.NewUserStore(conn),
+		Client: &http.Client{},
 	}
 
 
@@ -97,4 +100,10 @@ func connectToDB() *sql.DB{
 	log.Panic("Could not connect to Postgres after 10 attempts")
 
 	return nil
+}
+
+
+func (app *Config) setupRepo(conn *sql.DB) {
+	db := data.NewPostGresTest(conn)
+	app.Repo = db
 }
