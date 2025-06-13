@@ -37,7 +37,9 @@ A sample microservices ecosystem in Go, demonstrating:
       │          └─────────────── HTTP to Auth Service
       └─────────────────────────── AMQP ⇒ Listener Service
 
+```
 
+---
 ## 🛠️ Tech Stack
 Language: Go 1.24
 
